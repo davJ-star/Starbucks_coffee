@@ -147,3 +147,32 @@ body {
 ```html
 <div class="material-icons">upload</div>
 ```
+---
+
+
+
+
+
+---
+## 구성
+### Header
+#### logo
+```paintext
+상대적 배치를 이용해, 좌측 수직 중앙 배치
+```
+```css
+header .logo {
+  height: 75px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+```
+#### sub-menu
+```html
+```
+#### main menu
+```html
+```
