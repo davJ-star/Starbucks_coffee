@@ -21,3 +21,11 @@ searchInputEl.addEventListener('blur', function () {
   searchInputEl.setAttribute('placeholder', '')
 })
 
+/**
+ * 슬라이드 요소 관리
+ */
+new Swiper('.notice-line .swiper-container', {
+    direction: 'vertical', // 수직 슬라이드
+    autoplay: true, // 자동 재생 여부
+    loop: true // 반복 재생 여부
+  })
