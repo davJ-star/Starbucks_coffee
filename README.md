@@ -171,8 +171,46 @@ header .logo {
 }
 ```
 #### sub-menu
-```html
+```paintext
+flex 정렬을  통해 li를 수평으로 정렬
 ```
+```css
+header .sub-menu {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+}
+header .sub-menu ul.menu {
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+```
+```paintext
+
+// 검색창 요소 내부 실제 input 요소에 포커스 될때
+// 검색창 요소 내부 실제 input 요소에서 포커스가 해제(블러)될때
+
+각각 add()와 remove()를 통해 해당 .focused 클래스 선택자 선택 및 해제!
+```
+```js
+// 검색창 요소를 클릭하면 실행.
+searchEl.addEventListener('click', function () {
+  searchInputEl.focus()
+})
+// 검색창 요소 내부 실제 input 요소에 포커스되면 실행.
+searchInputEl.addEventListener('focus', function () {
+  searchEl.classList.add('focused')
+  searchInputEl.setAttribute('placeholder', '통합검색')
+})
+// 검색창 요소 내부 실제 input 요소에서 포커스가 해제(블러)되면 실행.
+searchInputEl.addEventListener('blur', function () {
+  searchEl.classList.remove('focused')
+  searchInputEl.setAttribute('placeholder', '')
+})
+
+```
+
 #### main menu
 ```html
 ```
