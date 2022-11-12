@@ -333,3 +333,96 @@ new Swiper('.swiper-container', {
   loop: true // 반복 재생 여부
 });
 ```
+#### notice-promotion
+```paintext
+swiper-wrapper안에 swiper-slide들로 구성
+
+버튼 배치 및 메인 slide 외 양쪽 나머지 슬라이드 opacity: 0.5로 조절
+```
+```js
+// swiperjs docs
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+```
+
+```html
+<!-- in BODY -->
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">1</div>
+    <div class="swiper-slide">2</div>
+    <div class="swiper-slide">3</div>
+  </div>
+</div>
+```
+```css
+.notice .promotion {
+  /*width: auto;*/
+  height: 693px;
+  background-color: #f6f5ef;
+  position: relative;
+  overflow: hidden;
+  transition: height .4s;
+}
+.notice .promotion .swiper-container {
+  /* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
+  width: calc(819px * 3 + 20px);
+  height: 553px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: calc((819px * 3 + 20px) / -2);
+}
+.notice .promotion .swiper-slide {
+  position: relative;
+  opacity: .5;
+  transition: opacity 1s;
+}
+.notice .promotion .swiper-slide .btn {
+  /*width: 130px;*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+```
+```js
+new Swiper('.promotion .swiper-container', {
+  // direction: 'horizontal', // 수평 슬라이드
+  autoplay: { // 자동 재생 여부
+    delay: 5000 // 5초마다 슬라이드 바뀜
+  },
+  loop: true, // 반복 재생 여부
+  slidesPerView: 3, // 한 번에 보여줄 슬라이드 개수
+  spaceBetween: 10, // 슬라이드 사이 여백
+  centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+  pagination: { // 페이지 번호 사용 여부
+    el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+    clickable: true // 사용자의 페이지 번호 요소 제어 가능 여부
+  },
+  navigation: { // 슬라이드 이전/다음 버튼 사용 여부
+    prevEl: '.promotion .swiper-prev', // 이전 버튼 선택자
+    nextEl: '.promotion .swiper-next' // 다음 버튼 선택자
+  }
+});
+```
