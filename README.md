@@ -212,5 +212,21 @@ searchInputEl.addEventListener('blur', function () {
 ```
 
 #### main menu
-```html
+```paintext
+drop-down menu로 hover로 구현
+sub-menu와 동일하게 flex 정렬을  통해 li를 수평으로 정렬
+```
+```css
+header .main-menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul {
+  padding: 20px 0;
+  display: flex;
+}
 ```
