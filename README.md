@@ -426,3 +426,54 @@ new Swiper('.promotion .swiper-container', {
   }
 });
 ```
+### section - awards
+```paintext
+// 네비게이션 옵션 추가
+// css로 네비게이션 배치
+```
+```js
+new Swiper('.awards .swiper-container', {
+    // direction: 'horizontal', // 수평 슬라이드
+    autoplay: true, // 자동 재생 여부
+    loop: true, // 반복 재생 여부
+    spaceBetween: 30, // 슬라이드 사이 여백
+    slidesPerView: 5, // 한 번에 보여줄 슬라이드 개수
+    // slidesPerGroup: 5, // 한 번에 슬라이드 할 개수(전체 개수로 나뉘어야 함)
+    navigation: { // 슬라이드 이전/다음 버튼 사용 여부
+      prevEl: '.awards .swiper-prev', // 이전 버튼 선택자
+      nextEl: '.awards .swiper-next' // 다음 버튼 선택자
+    }
+});
+```
+
+```html
+ <!--promotion과 동일-->
+```
+```css
+.awards .swiper-prev,
+.awards .swiper-next {
+  width: 42px;
+  height: 42px;
+  outline: none;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: .3;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+.awards .swiper-prev {
+  left: -100px;
+}
+.awards .swiper-next {
+  right: -100px;
+}
+```
+

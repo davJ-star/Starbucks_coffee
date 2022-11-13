@@ -29,7 +29,7 @@ new Swiper('.notice-line .swiper-container', {
     autoplay: true, // 자동 재생 여부
     loop: true // 반복 재생 여부
   });
-  new Swiper('.promotion .swiper-container', {
+new Swiper('.promotion .swiper-container', {
     // direction: 'horizontal', // 수평 슬라이드
     autoplay: { // 자동 재생 여부
       delay: 5000 // 5초마다 슬라이드 바뀜
@@ -46,4 +46,18 @@ new Swiper('.notice-line .swiper-container', {
       prevEl: '.promotion .swiper-prev', // 이전 버튼 선택자
       nextEl: '.promotion .swiper-next' // 다음 버튼 선택자
     }
-  });
+});
+new Swiper('.awards .swiper-container', {
+    // direction: 'horizontal', // 수평 슬라이드
+    autoplay: true, // 자동 재생 여부
+    loop: true, // 반복 재생 여부
+    spaceBetween: 30, // 슬라이드 사이 여백
+    slidesPerView: 5, // 한 번에 보여줄 슬라이드 개수
+    // slidesPerGroup: 5, // 한 번에 슬라이드 할 개수(전체 개수로 나뉘어야 함)
+    navigation: { // 슬라이드 이전/다음 버튼 사용 여부
+      prevEl: '.awards .swiper-prev', // 이전 버튼 선택자
+      nextEl: '.awards .swiper-next' // 다음 버튼 선택자
+    }
+});
+  
+
