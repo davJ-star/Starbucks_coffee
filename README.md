@@ -477,3 +477,22 @@ new Swiper('.awards .swiper-container', {
 }
 ```
 
+### footer
+```paintext
+// flex로 수평 정렬
+// 이는 메뉴바 구성원리와도 동일
+
+// btn-group과 menu가 핵심
+```
+```css
+footer .menu {
+  display: flex;
+  justify-content: center;
+}
+
+footer .btn-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+```
