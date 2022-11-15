@@ -21,6 +21,18 @@ searchInputEl.addEventListener('blur', function () {
   searchInputEl.setAttribute('placeholder', '')
 })
 
+const toTopEl = document.querySelector('#to-top')
+// 상단으로 스크롤 버튼을 클릭하면,
+toTopEl.addEventListener('click', function () {
+    // 페이지 위치를 최상단으로 부드럽게(0.7초 동안) 이동.
+    gsap.to(window, .7, {
+      scrollTo: 0
+    })
+  })
+
+
+
+
 /**
  * 슬라이드 요소 관리
  */
@@ -59,5 +71,7 @@ new Swiper('.awards .swiper-container', {
       nextEl: '.awards .swiper-next' // 다음 버튼 선택자
     }
 });
-  
+
+
+
 
