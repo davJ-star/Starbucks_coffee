@@ -194,6 +194,10 @@ new Swiper('.swiper-container', {
 ---
 ## 구성
 ### Header
+```paintext
+fixed되는 starbuck-menu(in Header)라서
+위치를 적절한 곳에 배치시키고 다시 추가
+```
 #### logo
 ```paintext
 상대적 배치를 이용해, 좌측 수직 중앙 배치
