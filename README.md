@@ -268,6 +268,55 @@ header .main-menu .item .item__contents .contents__menu > ul {
   display: flex;
 }
 ```
+### section - visual
+```paintext
+<div class="fade-in"></div>의 구성
+.fade-in에 gsap.to()로 순차적(fade-in) 등장 모션 추가
+```
+```html
+<!--<div class="fade-in"></div>의 구성-->
+    <div class="inner">
+
+      <div class="title fade-in">
+        <img />
+        <a href="javascript:void(0)" class="btn btn--brown">자세히 보기</a>
+      </div>
+      <div class="fade-in">
+        <img class="cup1 image" />
+        <img class="cup1 text" />
+      </div>
+      <div class="fade-in">
+        <img class="cup2 image" />
+        <img class="cup2 text" />
+      </div>
+      <div class="fade-in">
+        <img class="spoon" />
+      </div>
+
+    </div>
+```
+```css
+/*default: opacity: 0*/
+.visual .fade-in {
+  opacity: 0;
+}
+/*순차적으로 등장하여, gsap.to*()를 적용하며, 옵션 내, opacity: 1을 실행!*/
+
+/*아래 js 코드를 참고*/
+
+```
+```js
+// 각 htmlelements list에 반복적으로 gsap.to()로 등장 모션을 정하고, 구체적 옵션을 안에 추가해, 각 htmlelement에 부착
+fadeEls.forEach(function (fadeEl, index) {
+  // 각 요소들을 순서대로(delay) 보여지게 함!
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * .7,
+    opacity: 1
+  })
+})
+```
+
+
 ### section - notice
 #### notice-line
 ```paintext
