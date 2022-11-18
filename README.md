@@ -186,10 +186,19 @@ new Swiper('.swiper-container', {
 ```
 
 ---
+## Lodash
 
+[Lodash](https://lodash.com/)는 다양한 유틸리티 기능을 제공하는 자바스크립트 라이브러리입니다.
 
+[Lodash API](https://lodash.com/docs/4.17.15) <br>
+[Lodash throttle](https://lodash.com/docs/4.17.15#throttle)
 
-
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
+```
+```paintext
+  scroll event에 .throttle()로 스크롤이 지나치게 자주 발생하는 것을 조절(고의적으로 부하 제공)
+```
 
 ---
 ## 구성
@@ -549,3 +558,75 @@ footer .btn-group {
   justify-content: center;
 }
 ```
+### side(top-to-button and badge)
+#### top-to-button
+```paintext
+// 화면을 기준으로 고정시키며, 배치(postion:fixed;)
+// gsap.to()로, window객체를 이용해, scroll 위치 0으로 이동(scrollTo: 0)
+```
+```css
+#to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+```
+```js
+// 상단으로 스크롤 버튼을 클릭하면,
+toTopEl.addEventListener('click', function () {
+  // 페이지 위치를 최상단으로 부드럽게(0.7초 동안) 이동.
+  gsap.to(window, .7, {
+    scrollTo: 0
+  })
+})
+
+```
+
+#### badge
+```paintext
+// header 기준으로 배치
+// scroll 특정 위치를 넘어가면, 사라지고, 
+//                   넘어가지않으면, 존재
+```
+```css
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+```
+```js
+ // 페이지 스크롤 위치가 500px이 넘으면.
+  if (window.scrollY > 500) {
+    // Badge 요소 숨기기!
+    gsap.to(badgeEl, .6, {
+      opacity: 0,
+      display: 'none'
+    })
+    // 상단으로 스크롤 버튼 보이기!
+    gsap.to(toTopEl, .2, {
+      x: 0
+    })
+
+  // 페이지 스크롤 위치가 500px이 넘지 않으면.
+  } else {
+    // Badge 요소 보이기!
+    gsap.to(badgeEl, .6, {
+      opacity: 1,
+      display: 'block'
+    })
+    // 상단으로 스크롤 버튼 숨기기!
+    gsap.to(toTopEl, .2, {
+      x: 100
+    })
+  }
+```
+
